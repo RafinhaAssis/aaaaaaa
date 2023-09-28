@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/processar" method="post">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome"><br>
+
+    <label for="cpf">CPF:</label>
+    <input type="text" id="cpf" name="cpf"><br>
+
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email"><br>
+
+    <label for="telefone">Telefone:</label>
+    <input type="tel" id="telefone" name="telefone"><br>
+
+    <label for="atv">Atividade que deseja exercer:</label>
+    <select id="atv" name="atividade">
+        <option value="Agricultura">Agricultura</option>
+    </select><br>
+
+    <label for="est">Estado:</label>
+    <select id="est" name="estado">
+        <option value="ac">AC</option>
+        <option value="am">AM</option>
+        <option value="ba">BA</option>
+        <option value="rj">RJ</option>
+        <option value="sp">SP</option>
+    </select><br>
+
+    <label for="municipio">Município:</label>
+    <input type="text" id="municipio" name="municipio"><br>
+
+    <label for="prop">Tamanho da Propriedade:</label>
+    <input type="text" id="prop" name="propriedade"><br>
+
+    <input type="submit" value="Enviar">
+</form>
+</body>
+</html>

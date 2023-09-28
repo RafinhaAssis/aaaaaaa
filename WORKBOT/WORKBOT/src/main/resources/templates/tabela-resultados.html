@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Resultado da Busca</title>
+</head>
+<body>
+<h1>Resultado da Busca</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Nome</th>
+    <th>Idade</th>
+    <th>Ação</th> <!-- Adicione uma coluna para ação -->
+  </tr>
+  <tr th:each="pessoa : ${pessoas}">
+    <td th:text="${pessoa.id}"></td>
+    <td th:text="${pessoa.nome}"></td>
+    <td th:text="${pessoa.idade}"></td>
+    <td>
+      <!-- Adicione um botão para selecionar a pessoa -->
+      <form action="/selecionar-pessoa" method="post">
+        <input type="hidden" name="id" th:value="${pessoa.id}" />
+        <button type="submit">Selecionar</button>
+      </form>
+    </td>
+  </tr>
+</table>
+<a href="/nomes-selecionados">Ver Nomes Selecionados</a>
+</body>
+</html>

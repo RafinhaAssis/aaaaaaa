@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Nomes Selecionados</title>
+</head>
+<body>
+<h1>Nomes Selecionados</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>SEMENTE</th>
+    <th>DESCRIÇÃO</th>
+  </tr>
+  <tr th:each="p : ${nomesSelecionados}">
+  <td th:text="${p.semente_ideal_solo}"></td>
+  <td th:text="${p.Desc}"></td>
+  <td th:text="${p.Clima_Predominante}"></td>
+  <td th:text="${p.Tempo}"></td>
+    <td th:text="${p.qtd_Plantas_Hectar}"></td>
+    <td th:text="${p.Despesas}"></td>
+    <td th:text="${p.Lucro}"></td>
+  </tr>
+</table>
+<form action="/Temporaries" method="get">
+  <button type="submit">Selecionar</button>
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Lista de Pessoas</title>
+</head>
+<body>
+<h1>Recomendações de Plantio:</h1>
+<p>Com base na localização da sua propriedade, climatologia da região e o solo de seu municipio segue quais são as melhores culturas de plantio:</p>
+<p>Por favor escolha  quais serão suas opções para que possa ser analizado </p>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>SEMENTE</th>
+    <th>DESCRIÇÃO</th>
+  </tr>
+  <tr th:each="pessoa : ${pessoas}">
+    <td th:text="${pessoa.id}"></td>
+    <td th:text="${pessoa.semente_ideal_solo}"></td>
+    <td th:text="${pessoa.Desc}"></td>
+    <td>
+      <!-- Adicione um botão para selecionar a pessoa -->
+      <form action="/selecionar-pessoa" method="post">
+        <input type="hidden" name="id" th:value="${pessoa.id}" />
+        <button type="submit">Selecionar</button>
+      </form>
+    </td>
+  </tr>
+</table>
+<a href="/nomes-selecionados">Ver Nomes Selecionados</a>
+</body>
+</html>

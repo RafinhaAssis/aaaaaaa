@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Nomes Selecionados</title>
+</head>
+<body>
+<h1>Nomes Selecionados</h1>
+
+<ul>
+  <li th:each="nome : ${nomesSelecionados}" th:text="${nome}"></li>
+</ul>
+</body>
+</html>
